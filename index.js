@@ -8,7 +8,10 @@ const {
 
 let teilnehmerESC = randomListOfMusicians();
 let teilnehmendenCountriesWithPoints = getParticipatingCountries(teilnehmerESC);
-let points = pointsFromJuryVoting(teilnehmendenCountriesWithPoints);
+let points = pointsFromJuryVoting(
+  listOfCountries,
+  teilnehmendenCountriesWithPoints
+);
 let points2 = pointsFromPublicVoting(teilnehmendenCountriesWithPoints);
 let sortedCountries = points.sort(
   (a, b) => b.jurypoints + b.publicpoints - (a.jurypoints + a.publicpoints)

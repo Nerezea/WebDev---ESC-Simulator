@@ -8,19 +8,81 @@ function getParticipatingCountries(array) {
   return newArray;
 }
 
-function pointsFromJuryVoting(pointCountries) {
-  for (index = 0; index < 37; index++) {
-    pointCountries[randomNumberGenerator()].jurypoints += 12;
-    pointCountries[randomNumberGenerator()].jurypoints += 10;
-    pointCountries[randomNumberGenerator()].jurypoints += 8;
-    pointCountries[randomNumberGenerator()].jurypoints += 7;
-    pointCountries[randomNumberGenerator()].jurypoints += 6;
-    pointCountries[randomNumberGenerator()].jurypoints += 5;
-    pointCountries[randomNumberGenerator()].jurypoints += 4;
-    pointCountries[randomNumberGenerator()].jurypoints += 3;
-    pointCountries[randomNumberGenerator()].jurypoints += 2;
-    pointCountries[randomNumberGenerator()].jurypoints += 1;
-  }
+function pointsFromJuryVoting(juryCountries, pointCountries) {
+  juryCountries.forEach((element) => {
+    points12 = pointCountries[randomNumberGenerator()];
+    points10 = pointCountries[randomNumberGenerator()];
+    points8 = pointCountries[randomNumberGenerator()];
+    points7 = pointCountries[randomNumberGenerator()];
+    points6 = pointCountries[randomNumberGenerator()];
+    points5 = pointCountries[randomNumberGenerator()];
+    points4 = pointCountries[randomNumberGenerator()];
+    points3 = pointCountries[randomNumberGenerator()];
+    points2 = pointCountries[randomNumberGenerator()];
+    points1 = pointCountries[randomNumberGenerator()];
+
+    points12.jurypoints += 12;
+    points10.jurypoints += 10;
+    points8.jurypoints += 8;
+    points7.jurypoints += 7;
+    points6.jurypoints += 6;
+    points5.jurypoints += 5;
+    points4.jurypoints += 4;
+    points3.jurypoints += 3;
+    points2.jurypoints += 2;
+    points1.jurypoints += 1;
+
+    console.log(`${element} Voting:
+    12 Points: ${points12.country} (overall: ${points12.jurypoints})
+    10 Points: ${points10.country} (overall: ${points10.jurypoints})
+    8 Points: ${points8.country} (overall: ${points8.jurypoints})
+    7 Points: ${points7.country} (overall: ${points7.jurypoints})
+    6 Points: ${points6.country} (overall: ${points6.jurypoints})
+    5 Points: ${points5.country} (overall: ${points5.jurypoints})
+    4 Points: ${points4.country} (overall: ${points4.jurypoints})
+    3 Points: ${points3.country} (overall: ${points3.jurypoints})
+    2 Points: ${points2.country} (overall: ${points2.jurypoints})
+    1 Point: ${points1.country} (overall: ${points1.jurypoints})
+    `);
+  });
+
+  pointCountries.forEach((element) => {
+    points12 = pointCountries[randomNumberGenerator()];
+    points10 = pointCountries[randomNumberGenerator()];
+    points8 = pointCountries[randomNumberGenerator()];
+    points7 = pointCountries[randomNumberGenerator()];
+    points6 = pointCountries[randomNumberGenerator()];
+    points5 = pointCountries[randomNumberGenerator()];
+    points4 = pointCountries[randomNumberGenerator()];
+    points3 = pointCountries[randomNumberGenerator()];
+    points2 = pointCountries[randomNumberGenerator()];
+    points1 = pointCountries[randomNumberGenerator()];
+
+    points12.jurypoints += 12;
+    points10.jurypoints += 10;
+    points8.jurypoints += 8;
+    points7.jurypoints += 7;
+    points6.jurypoints += 6;
+    points5.jurypoints += 5;
+    points4.jurypoints += 4;
+    points3.jurypoints += 3;
+    points2.jurypoints += 2;
+    points1.jurypoints += 1;
+
+    console.log(`${element.country} Voting:
+    12 Points: ${points12.country} (overall: ${points12.jurypoints})
+    10 Points: ${points10.country} (overall: ${points10.jurypoints})
+    8 Points: ${points8.country} (overall: ${points8.jurypoints})
+    7 Points: ${points7.country} (overall: ${points7.jurypoints})
+    6 Points: ${points6.country} (overall: ${points6.jurypoints})
+    5 Points: ${points5.country} (overall: ${points5.jurypoints})
+    4 Points: ${points4.country} (overall: ${points4.jurypoints})
+    3 Points: ${points3.country} (overall: ${points3.jurypoints})
+    2 Points: ${points2.country} (overall: ${points2.jurypoints})
+    1 Point: ${points1.country} (overall: ${points1.jurypoints})
+    `);
+  });
+
   return pointCountries;
 }
 
