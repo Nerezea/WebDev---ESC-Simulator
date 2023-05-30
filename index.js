@@ -2,14 +2,14 @@ const { listOfCountries } = require("./lists");
 const { randomListOfMusicians } = require("./musician");
 const {
   getParticipatingCountries,
-  pointsFromJury,
-  pointsFromPublic,
+  pointsFromJuryVoting,
+  pointsFromPublicVoting,
 } = require("./points");
 
 let teilnehmerESC = randomListOfMusicians();
 let teilnehmendenCountriesWithPoints = getParticipatingCountries(teilnehmerESC);
-let points = pointsFromJury(teilnehmendenCountriesWithPoints);
-let points2 = pointsFromPublic(teilnehmendenCountriesWithPoints);
+let points = pointsFromJuryVoting(teilnehmendenCountriesWithPoints);
+let points2 = pointsFromPublicVoting(teilnehmendenCountriesWithPoints);
 let sortedCountries = points.sort(
   (a, b) => b.jurypoints + b.publicpoints - (a.jurypoints + a.publicpoints)
 );

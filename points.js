@@ -8,7 +8,7 @@ function getParticipatingCountries(array) {
   return newArray;
 }
 
-function pointsFromJury(pointCountries) {
+function pointsFromJuryVoting(pointCountries) {
   for (index = 0; index < 37; index++) {
     pointCountries[randomNumberGenerator()].jurypoints += 12;
     pointCountries[randomNumberGenerator()].jurypoints += 10;
@@ -24,7 +24,7 @@ function pointsFromJury(pointCountries) {
   return pointCountries;
 }
 
-function pointsFromPublic(pointCountries) {
+function pointsFromPublicVoting(pointCountries) {
   for (index = 0; index < 60; index++) {
     pointCountries[randomNumberGenerator()].publicpoints += 12;
     pointCountries[randomNumberGenerator()].publicpoints += 10;
@@ -44,6 +44,6 @@ const randomNumberGenerator = () => Math.floor(Math.random() * 26);
 
 module.exports = {
   getParticipatingCountries,
-  pointsFromJury,
-  pointsFromPublic,
+  pointsFromJuryVoting,
+  pointsFromPublicVoting,
 };
