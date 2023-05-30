@@ -2,28 +2,38 @@ const { listOfCountries } = require("./lists");
 const { randomListOfMusicians } = require("./musician");
 const {
   getParticipatingCountries,
-  pointsFromAllCountries,
+  pointsFromJury,
+  pointsFromPublic,
 } = require("./points");
 
 let teilnehmerESC = randomListOfMusicians();
 let teilnehmendenCountriesWithPoints = getParticipatingCountries(teilnehmerESC);
-let points = pointsFromAllCountries(teilnehmendenCountriesWithPoints);
-let sortedCountries = points.sort((a, b) => b.points - a.points);
+let points = pointsFromJury(teilnehmendenCountriesWithPoints);
+let points2 = pointsFromPublic(teilnehmendenCountriesWithPoints);
+let sortedCountries = points.sort(
+  (a, b) => b.jurypoints + b.publicpoints - (a.jurypoints + a.publicpoints)
+);
 
 function resultOfESC(teilnehmerESC, sortedCountries) {
-  for (let index = 0; index < sortedCountries.length; index++) {
-    console.log(
-      `${index + 1}.`,
-      `${sortedCountries[index].country}: ${
-        sortedCountries[index].points
-      } Points
-      ${
-        teilnehmerESC[sortedCountries.indexOf(sortedCountries[index])].name
-      } - ${
-        teilnehmerESC[sortedCountries.indexOf(sortedCountries[index])].song
-      }`
-    );
-  }
+  console.log("-------------------------------------");
+  console.log("FINAL TABLE");
+  console.log("-------------------------------------");
+  setTimeout(function () {
+    for (let index = 0; index < sortedCountries.length; index++) {
+      console.log(
+        `${index + 1}.`,
+        `${sortedCountries[index].country}: ${
+          sortedCountries[index].jurypoints +
+          sortedCountries[index].publicpoints
+        } Points
+        ${
+          teilnehmerESC[sortedCountries.indexOf(sortedCountries[index])].name
+        } - ${
+          teilnehmerESC[sortedCountries.indexOf(sortedCountries[index])].song
+        }`
+      );
+    }
+  }, 2000);
 }
 
 resultOfESC(teilnehmerESC, sortedCountries);
