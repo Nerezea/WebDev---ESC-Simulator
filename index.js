@@ -1,8 +1,4 @@
-const {
-  Musician,
-  randomGenerator,
-  randomListOfMusicians,
-} = require("./musician");
+const { randomListOfMusicians } = require("./musician");
 
-let teilnehmer = randomListOfMusicians();
-console.log(teilnehmer.length);
+let teilnehmerESC = randomListOfMusicians();
+console.log(teilnehmerESC);
