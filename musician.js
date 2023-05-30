@@ -9,9 +9,13 @@ class Musician {
 }
 
 function randomGenerator(array) {
-  entry = array[Math.floor(Math.random() * array.length)];
+  entry = randomEntryFromArray(array);
   removeEntryFromList(array, entry);
   return entry;
+}
+
+function randomEntryFromArray(array) {
+  return array[Math.floor(Math.random() * array.length)];
 }
 
 function removeEntryFromList(array, entry) {
@@ -32,4 +36,4 @@ function randomListOfMusicians() {
   return newList;
 }
 
-module.exports = { randomListOfMusicians };
+module.exports = { randomListOfMusicians, randomEntryFromArray };
