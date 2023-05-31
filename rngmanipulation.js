@@ -1,6 +1,3 @@
-// BUG - LISTE
-// 1) WENN LISTE ERSETZT WIRD IST UK ODER GERMANY TROTZDEM IN DER LISTE DER NICHT TEILNEHMENDEN UND MUSS RAUSGELÖSCHT WERDEN
-
 function forcedGermanyAndUK(listOfParticipants) {
   let germanyOrUKlist = [];
   for (let index = 0; index < listOfParticipants.length; index++) {
@@ -22,7 +19,7 @@ function forcedGermanyAndUK(listOfParticipants) {
   }
 }
 
-function germanyBias(
+function biasTowardsCertainCountries(
   objectWithPoints,
   pointCountries,
   notAllowedCountry,
@@ -43,4 +40,4 @@ function germanyBias(
   }
 }
 
-module.exports = { forcedGermanyAndUK, germanyBias };
+module.exports = { forcedGermanyAndUK, biasTowardsCertainCountries };

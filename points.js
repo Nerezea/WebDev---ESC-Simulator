@@ -1,4 +1,4 @@
-const { germanyBias } = require("./rngmanipulation");
+const { biasTowardsCertainCountries } = require("./rngmanipulation");
 
 function getParticipatingCountries(array) {
   let newArray = [];
@@ -13,14 +13,24 @@ function pointsFromJuryVoting(juryCountries, pointCountries) {
     do {
       points12 = pointCountries[randomNumberGenerator()];
       if (points12.country === "Germany") {
-        points12 = germanyBias(points12, pointCountries, element.country, 2);
+        points12 = biasTowardsCertainCountries(
+          points12,
+          pointCountries,
+          element.country,
+          2
+        );
       }
     } while (points12.country === element.country);
 
     do {
       points10 = pointCountries[randomNumberGenerator()];
       if (points10.country === "Germany") {
-        points10 = germanyBias(points10, pointCountries, element.country, 4);
+        points10 = biasTowardsCertainCountries(
+          points10,
+          pointCountries,
+          element.country,
+          4
+        );
       }
     } while (
       points10.country === element.country ||
@@ -30,7 +40,12 @@ function pointsFromJuryVoting(juryCountries, pointCountries) {
     do {
       points8 = pointCountries[randomNumberGenerator()];
       if (points8.country === "Germany") {
-        points8 = germanyBias(points8, pointCountries, element.country, 6);
+        points8 = biasTowardsCertainCountries(
+          points8,
+          pointCountries,
+          element.country,
+          6
+        );
       }
     } while (
       points8.country === element.country ||
@@ -41,7 +56,12 @@ function pointsFromJuryVoting(juryCountries, pointCountries) {
     do {
       points7 = pointCountries[randomNumberGenerator()];
       if (points7.country === "Germany") {
-        points7 = germanyBias(points7, pointCountries, element.country, 8);
+        points7 = biasTowardsCertainCountries(
+          points7,
+          pointCountries,
+          element.country,
+          8
+        );
       }
     } while (
       points7.country === element.country ||
@@ -53,7 +73,12 @@ function pointsFromJuryVoting(juryCountries, pointCountries) {
     do {
       points6 = pointCountries[randomNumberGenerator()];
       if (points6.country === "Germany") {
-        points6 = germanyBias(points6, pointCountries, element.country, 10);
+        points6 = biasTowardsCertainCountries(
+          points6,
+          pointCountries,
+          element.country,
+          10
+        );
       }
     } while (
       points6.country === element.country ||
@@ -66,7 +91,12 @@ function pointsFromJuryVoting(juryCountries, pointCountries) {
     do {
       points5 = pointCountries[randomNumberGenerator()];
       if (points5.country === "Germany") {
-        points5 = germanyBias(points5, pointCountries, element.country, 10);
+        points5 = biasTowardsCertainCountries(
+          points5,
+          pointCountries,
+          element.country,
+          10
+        );
       }
     } while (
       points5.country === element.country ||
@@ -80,7 +110,12 @@ function pointsFromJuryVoting(juryCountries, pointCountries) {
     do {
       points4 = pointCountries[randomNumberGenerator()];
       if (points4.country === "Germany") {
-        points4 = germanyBias(points4, pointCountries, element.country, 10);
+        points4 = biasTowardsCertainCountries(
+          points4,
+          pointCountries,
+          element.country,
+          10
+        );
       }
     } while (
       points4.country === element.country ||
@@ -95,7 +130,12 @@ function pointsFromJuryVoting(juryCountries, pointCountries) {
     do {
       points3 = pointCountries[randomNumberGenerator()];
       if (points3.country === "Germany") {
-        points3 = germanyBias(points3, pointCountries, element.country, 10);
+        points3 = biasTowardsCertainCountries(
+          points3,
+          pointCountries,
+          element.country,
+          10
+        );
       }
     } while (
       points3.country === element.country ||
@@ -111,7 +151,12 @@ function pointsFromJuryVoting(juryCountries, pointCountries) {
     do {
       points2 = pointCountries[randomNumberGenerator()];
       if (points2.country === "Germany") {
-        points2 = germanyBias(points2, pointCountries, element.country, 10);
+        points2 = biasTowardsCertainCountries(
+          points2,
+          pointCountries,
+          element.country,
+          10
+        );
       }
     } while (
       points2.country === element.country ||
@@ -128,7 +173,12 @@ function pointsFromJuryVoting(juryCountries, pointCountries) {
     do {
       points1 = pointCountries[randomNumberGenerator()];
       if (points1.country === "Germany") {
-        points1 = germanyBias(points1, pointCountries, element.country, 10);
+        points1 = biasTowardsCertainCountries(
+          points1,
+          pointCountries,
+          element.country,
+          10
+        );
       }
     } while (
       points1.country === element.country ||
@@ -272,6 +322,7 @@ function pointsFromJuryVoting(juryCountries, pointCountries) {
       points1.country === points3.country ||
       points1.country === points2.country
     );
+
     points12.jurypoints += 12;
     points10.jurypoints += 10;
     points8.jurypoints += 8;
