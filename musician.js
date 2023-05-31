@@ -1,4 +1,5 @@
 const { listOfNames, listOfSongs, listOfCountries } = require("./lists");
+const { forcedGermanyAndUK } = require("./rngmanipulation");
 
 class Musician {
   constructor(name, song, country) {
@@ -33,6 +34,7 @@ function randomListOfMusicians() {
       )
     );
   }
+  forcedGermanyAndUK(newList);
   return newList;
 }
 
