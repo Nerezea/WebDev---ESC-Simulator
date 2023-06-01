@@ -1,5 +1,9 @@
-const { listOfNames, listOfSongs, listOfCountries } = require("./lists");
-const { forcedGermanyAndUK } = require("./rngmanipulation");
+const {
+  listOfNames,
+  listOfSongs,
+  listOfCountries,
+  listOfSeededCountries,
+} = require("./lists");
 
 class Musician {
   constructor(name, song, country) {
@@ -25,7 +29,20 @@ function removeEntryFromList(array, entry) {
 
 function randomListOfMusicians() {
   let newList = [];
-  for (let index = 0; index < 26; index++) {
+  for (
+    let indexSeeded = 0;
+    indexSeeded < listOfSeededCountries.length;
+    indexSeeded++
+  ) {
+    newList.push(
+      new Musician(
+        randomGenerator(listOfNames),
+        randomGenerator(listOfSongs),
+        listOfSeededCountries[indexSeeded]
+      )
+    );
+  }
+  for (let index = 0; index < 26 - listOfSeededCountries.length; index++) {
     newList.push(
       new Musician(
         randomGenerator(listOfNames),
@@ -34,7 +51,6 @@ function randomListOfMusicians() {
       )
     );
   }
-  forcedGermanyAndUK(newList);
   return newList;
 }
 

@@ -220,7 +220,6 @@ function pointsFromJuryVoting(juryCountries, pointCountries) {
 
   juryCountries.forEach((element) => {
     do {
-      console.log(element);
       points12 = pointCountries[randomNumberGenerator()];
     } while (points12.country === element);
 

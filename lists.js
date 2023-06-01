@@ -65,8 +65,6 @@ const listOfSongs = [
 ];
 
 const listOfCountries = [
-  "Germany",
-  "United Kingdom",
   "Serbia",
   "Portugal",
   "Albania",
@@ -108,4 +106,11 @@ const listOfCountries = [
   "Russia",
 ];
 
-module.exports = { listOfNames, listOfSongs, listOfCountries };
+const listOfSeededCountries = ["Germany", "United Kingdom"];
+
+module.exports = {
+  listOfNames,
+  listOfSongs,
+  listOfCountries,
+  listOfSeededCountries,
+};
