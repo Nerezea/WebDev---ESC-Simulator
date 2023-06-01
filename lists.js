@@ -72,8 +72,6 @@ const listOfCountries = [
   "Switzerland",
   "Poland",
   "Moldova",
-  "Spain",
-  "France",
   "Austria",
   "Armenia",
   "Croatia",
@@ -85,7 +83,6 @@ const listOfCountries = [
   "Belgium",
   "Ukraine",
   "Norway",
-  "Italy",
   "Israel",
   "Finland",
   "Sweden",
@@ -106,7 +103,13 @@ const listOfCountries = [
   "Russia",
 ];
 
-const listOfSeededCountries = ["Germany", "United Kingdom"];
+const listOfSeededCountries = [
+  "Germany",
+  "United Kingdom",
+  "France",
+  "Italy",
+  "Spain",
+];
 
 module.exports = {
   listOfNames,

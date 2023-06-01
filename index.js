@@ -16,7 +16,8 @@ let teilnehmendenCountriesWithPoints = getParticipatingCountries(teilnehmerESC);
 
 let points = pointsFromJuryVoting(
   listOfCountries,
-  teilnehmendenCountriesWithPoints
+  teilnehmendenCountriesWithPoints,
+  teilnehmerESC
 );
 let points2 = pointsFromPublicVoting(teilnehmendenCountriesWithPoints);
 
@@ -29,4 +30,4 @@ let sortedCountries = points.sort(
 
 setTimeout(function () {
   resultOfESC(teilnehmerESC, sortedCountries);
-}, 8000);
+}, 2000);

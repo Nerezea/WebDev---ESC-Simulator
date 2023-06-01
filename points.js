@@ -1,4 +1,5 @@
 const { biasTowardsCertainCountries } = require("./rngmanipulation");
+const { urbanCommentary } = require("./urbanBot");
 
 function getParticipatingCountries(array) {
   let newArray = [];
@@ -8,7 +9,7 @@ function getParticipatingCountries(array) {
   return newArray;
 }
 
-function pointsFromJuryVoting(juryCountries, pointCountries) {
+function pointsFromJuryVoting(juryCountries, pointCountries, teilnehmerESC) {
   pointCountries.forEach((element) => {
     do {
       points12 = pointCountries[randomNumberGenerator()];
@@ -216,6 +217,23 @@ function pointsFromJuryVoting(juryCountries, pointCountries) {
     2 Points: ${points2.country} (overall: ${points2.jurypoints})
     1 Point: ${points1.country} (overall: ${points1.jurypoints})
     `);
+
+    console.log(
+      urbanCommentary(
+        points12.country,
+        points10.country,
+        points8.country,
+        points7.country,
+        points6.country,
+        points5.country,
+        points4.country,
+        points3.country,
+        points2.country,
+        points1.country,
+        element.country,
+        teilnehmerESC
+      )
+    );
   });
 
   juryCountries.forEach((element) => {

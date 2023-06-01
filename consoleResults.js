@@ -70,16 +70,16 @@ function resultOfESC(teilnehmerESC, sortedCountries) {
   console.log("-------------------------------------");
 
   for (let index = 0; index < sortedCountries.length; index++) {
+    let index2 = teilnehmerESC
+      .map((element) => element.country)
+      .indexOf(sortedCountries[index].country);
+
     console.log(
       `${index + 1}.`,
       `${sortedCountries[index].country}: ${
         sortedCountries[index].jurypoints + sortedCountries[index].publicpoints
       } Points
-        ${
-          teilnehmerESC[sortedCountries.indexOf(sortedCountries[index])].name
-        } - ${
-        teilnehmerESC[sortedCountries.indexOf(sortedCountries[index])].song
-      }`
+        ${teilnehmerESC[index2].name} - ${teilnehmerESC[index2].song}`
     );
   }
 }

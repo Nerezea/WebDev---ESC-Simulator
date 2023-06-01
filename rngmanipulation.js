@@ -25,9 +25,9 @@ function biasTowardsCertainCountries(
   notAllowedCountry,
   number
 ) {
-  console.log(objectWithPoints);
+  // console.log(objectWithPoints);
   percentage = Math.floor(Math.random() * (100 - 1 + 1) + 1);
-  console.log(percentage);
+  // console.log(percentage);
   if (percentage <= number) {
     return objectWithPoints;
   } else if (percentage >= number + 1) {
@@ -35,7 +35,7 @@ function biasTowardsCertainCountries(
       .map((element) => element.country)
       .indexOf(notAllowedCountry);
     objectWithPoints = pointCountries[index];
-    console.log(objectWithPoints);
+    // console.log(objectWithPoints);
     return objectWithPoints;
   }
 }
