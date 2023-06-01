@@ -19,24 +19,13 @@
 //   }
 // }
 
-function biasTowardsCertainCountries(
-  objectWithPoints,
-  pointCountries,
-  notAllowedCountry,
-  number
-) {
-  // console.log(objectWithPoints);
+function biasTowardsCertainCountries(number) {
   percentage = Math.floor(Math.random() * (100 - 1 + 1) + 1);
   // console.log(percentage);
   if (percentage <= number) {
-    return objectWithPoints;
+    return false;
   } else if (percentage >= number + 1) {
-    index = pointCountries
-      .map((element) => element.country)
-      .indexOf(notAllowedCountry);
-    objectWithPoints = pointCountries[index];
-    // console.log(objectWithPoints);
-    return objectWithPoints;
+    return true;
   }
 }
 
