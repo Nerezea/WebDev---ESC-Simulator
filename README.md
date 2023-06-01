@@ -6,12 +6,14 @@ ToDo List:
 
 1. ~~Peter Urban Kommentar hinzufügen samt Liste mit Kommentaren die nach einem Jury Voting triggern~~
 2. Sleep Timer einführen zwischen den einzelnen Votings um eine Spannung aufzubauen
-3. Punktevergabe Code verbessern => eventuell als Objekt mit 12/10/8/7/6/5/4/3/2/1 aktualisieren
-4. ~~Eventuell auch andere Länder forcieren wie Frankreich und Italien~~
-5. ~~Bias Manipulation rework~~
-6. ~~Bias Manipulation auch für die nicht teilnehmenden Länder einführen~~
-7. Bias Manipulation auch für das Televoting einführen
-8. Weitere Bias Manipulationen, wie bspw. Cyprus Punkte an Greece oder San Marino Punkte an Italien
+3. Punktevergabe Code verbessern (Rekursion vermeiden)
+4. Punktevergabe Code in OOP umwandeln (12/10/8/7/6/5/4/3/2/1)
+5. ~~Eventuell auch andere Länder forcieren wie Frankreich und Italien~~
+6. ~~Bias Manipulation rework~~
+7. ~~Bias Manipulation auch für die nicht teilnehmenden Länder einführen~~
+8. Bias Manipulation auch für das Televoting einführen
+9. Weitere Bias Manipulationen, wie bspw. Cyprus Punkte an Greece oder San Marino Punkte an Italien
+10. Seltene Fälle: Platz 1 hat genauso viele Punkte wie Platz 2 betrachten
 
 Bug List:
 
@@ -20,3 +22,5 @@ Bug List:
 2. ~~Probleme tauchen auf bei der Bias Manipulation für nicht teilnehmende Länder. Da mit der selben Funktion gearbeitet wird wie bei den teilnehmenden Ländern und die Logik darauf basiert das teilnehmende Land als while trigger zu benutzen, dieses aber bei nicht teilnehmenden Ländern nicht funktionieren kann, kracht es. Element ist der Auslöser.~~
    -> ~~LÖSUNG: Mit boolean arbeiten, ist nicht an das Objekt gebunden und kann frei verändert werden~~
 3. ~~CRITICAL BUG, bei der Endabrechnung wird der Index falsch berechnet und es werden die falschen Musician für die jeweiligen Länder angezeigt.~~
+4. Georgia (nicht teilnehmendes Land am ESC) und Kommentar von Peter Urban das "undefined" keine Punkte an Germany gegeben hat.
+   -> LÖSUNG: ...
